@@ -14,11 +14,11 @@ body {
   box-shadow: 0 3px 6px rgba(80, 76, 76, 0.104), 0 3px 6px rgba(124, 118, 118, 0.132);
 }
 .zoom{
-  transition:  2s ease;
+  transition: 2s ease;
 }
 
 .card:hover .zoom{
-  background-size: 190%;
+  background-size: 120%;
 }
 .card:hover .buy{
   @apply bg-theme;
