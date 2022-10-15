@@ -1,5 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
-
+require("dotenv").config()
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   defaultNetwork: "ganache",
@@ -8,7 +8,7 @@ module.exports = {
     },
     ganache: {
       url: "http://127.0.0.1:7545",
-      accounts: ["500c65945d3030dcd62c541b7f50351694c8e008acf6c71cb471f8ef305b6341"]
+      accounts: [process.env.PRIVATE_KEY]
     }
   },
   solidity: "0.8.17",
