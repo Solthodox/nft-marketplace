@@ -1,3 +1,3 @@
-export const contractAddress = '0xE1D9A530D774feEEa1E3E42cDC205cAE7f93E89b'
-export const tokenAddress="0xe16A0c5649DdF757449036be490a0B42619B1E1E"
-export const nftAddress="0x2C6a1245e72Befa694b94b876bBEBd4882095FeA"
+export const contractAddress = '0xeB2e62161Cd80b0DFec2F9c9C8a08796905C3D86'
+export const tokenAddress="0xD9fd82381Dd7867428fdFa77A558dc8769941730"
+export const nftAddress="0x98aA3EDaeBd827457613040Acc98Ceff429572C8"

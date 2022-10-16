@@ -58,6 +58,9 @@ async function main() {
 
     const sell4 = await marketplace.newMarketItem(nft.address, 4, 5, timestamp + 360000)
     await sell4.wait()
+
+    const offer = await marketplace.bid(1, ethers.utils.parseEther("10"))
+    await offer.wait()
 }
 
 // We recommend this pattern to be able to use async/await everywhere

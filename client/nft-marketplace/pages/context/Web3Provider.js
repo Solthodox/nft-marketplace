@@ -20,6 +20,37 @@ export function Web3Provider({children}) {
       try{
         const web3Modal = new Web3Modal()
         const connection = await web3Modal.connect()
+        const chainId = await window.ethereum.request({
+          method: 'eth_chainId',
+        });
+        console.log(chainId)
+        if(chainId!='0x5'){
+
+          try{
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: '0x5' }],
+              });
+              window.location.reload();
+          }catch{
+            await window.ethereum.request({
+              method: "wallet_addEthereumChain",
+              params: [{
+                  chainId: "0x5",
+                  rpcUrls: ["https://goerli.infura.io/v3/"],
+                  chainName: "Goerli Testnet",
+                  nativeCurrency: {
+                      name: "GoerliETH",
+                      symbol: "GoerliETH",
+                      decimals: 18
+                  },
+                  blockExplorerUrls: ["https://goerli.etherscan.io"]
+              }]
+            })
+          }
+         
+        }
+
         const ethersProvider = new ethers.providers.Web3Provider(connection)
         const ethersSigner = ethersProvider.getSigner()
         const ethersAccount = await ethersSigner.getAddress()

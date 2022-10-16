@@ -13,12 +13,16 @@ body {
 .shadowed{
   box-shadow: 0 3px 6px rgba(80, 76, 76, 0.104), 0 3px 6px rgba(124, 118, 118, 0.132);
 }
+.data-container{
+  z-index: 0;
+}
 .zoom{
-  transition: 2s ease;
+  z-index: 99;
+  transition: 1s ease;
 }
 
 .card:hover .zoom{
-  background-size: 120%;
+  transform: scale(1.2);
 }
 .card:hover .buy{
   @apply bg-theme;
@@ -27,4 +31,8 @@ body {
 
 input{
   background-color: transparent;
+}
+
+.front{
+  z-index: 99;
 }
