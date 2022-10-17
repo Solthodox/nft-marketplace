@@ -58,7 +58,6 @@ export default function ItemId() {
     async function bid(){
       if(parseInt(formInput)===NaN){
         throw new Error("Wrong input")
-        alert("Wrong input")
       }
       const instance = new ethers.Contract(contractAddress, Marketplace.abi, wallet.signer)
       const token = new ethers.Contract(tokenAddress, EasyNFT.abi, wallet.signer )
