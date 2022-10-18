@@ -1,7 +1,5 @@
 import { useWeb3 } from '../context/Web3Provider'
-import Image from "next/image"
 import Link from "next/link"
-import {BsSearch} from "react-icons/bs"
 
 function Header() {
     const wallet = useWeb3()
