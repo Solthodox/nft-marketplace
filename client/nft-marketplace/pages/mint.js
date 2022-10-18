@@ -6,7 +6,7 @@ import EasyNFT from "../../../src/artifacts/contracts/mock/token.sol/EasyNFT.jso
 import { ethers } from 'ethers'
 import { useWeb3 } from './context/Web3Provider'
 
-export default function mint() {
+export default function Mint() {
   const wallet = useWeb3()
   const [formInput , setFormInput] = useState()
   const styles = {
