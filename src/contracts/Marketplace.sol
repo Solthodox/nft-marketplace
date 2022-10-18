@@ -141,6 +141,9 @@ contract Marketplace is ERC721URIStorage, Ownable {
         emit itemSold(item.tokenId, offer.offeror);
     }
 
+    /**
+    @notice Function to make a new offer to a certain item
+     */
     function bid(uint256 marketItemId, uint256 amount) external {
         require(
             IERC20(NATIVE_TOKEN).allowance(msg.sender, address(this)) >= amount,
@@ -149,6 +152,9 @@ contract Marketplace is ERC721URIStorage, Ownable {
         _auctionBids[marketItemId].push(Offer(amount, msg.sender));
     }
 
+    /**
+    @notice Fetch all the offers made to a certain item
+     */
     function getBids(uint256 marketItemId)
         external
         view
@@ -156,6 +162,10 @@ contract Marketplace is ERC721URIStorage, Ownable {
     {
         return _auctionBids[marketItemId];
     }
+
+    /**
+    @notice Function to create an NFT from the marketplace itself
+     */
 
     function mint(string memory uri) external payable {
         require(msg.value >= MINTING_PRICE, "Must pay minting price");
