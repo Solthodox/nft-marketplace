@@ -4,7 +4,7 @@ import {useState } from 'react'
 import {tokenAddress} from '../config'
 import EasyNFT from "../artifacts/contracts/mock/token.sol/EasyNFT.json"
 import { ethers } from 'ethers'
-import { useWeb3 } from './context/Web3Provider'
+import { useWeb3 } from '../context/Web3Provider'
 
 export default function Mint() {
   const wallet = useWeb3()

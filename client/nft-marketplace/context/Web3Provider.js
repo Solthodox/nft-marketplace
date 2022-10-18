@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext, createContext} from "react"
 import Web3Modal from 'web3modal'
 import {ethers} from "ethers"
-
+import React from "react"
 const Web3Context = createContext()
 
 export function useWeb3(){

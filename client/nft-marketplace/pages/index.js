@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import Link from "next/link"
-import { useWeb3 } from './context/Web3Provider'
+import { useWeb3 } from '../context/Web3Provider'
 import Footer from "./components/Footer"
 export default function Home() {
 

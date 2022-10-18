@@ -1,4 +1,4 @@
-import { useWeb3 } from '../context/Web3Provider'
+import { useWeb3 } from '../../context/Web3Provider'
 import Link from "next/link"
 
 function Header() {

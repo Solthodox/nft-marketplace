@@ -3,7 +3,7 @@ import Header from './components/Header'
 import NFT from './components/NFT'
 import { useState, useEffect} from 'react'
 import { ethers } from 'ethers'
-import { useWeb3 } from './context/Web3Provider'
+import { useWeb3 } from '../context/Web3Provider';
 import { contractAddress , nftAddress, tokenAddress} from '../config'
 import Marketplace from "../artifacts/contracts/Marketplace.sol/Marketplace.json"
 import Collection1 from "../artifacts/contracts/mock/NFTs.sol/Collection1.json"

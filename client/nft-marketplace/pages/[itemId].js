@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Alert from '@mui/material/Alert';
-import { useWeb3 } from './context/Web3Provider'
+import { useWeb3 } from '../context/Web3Provider';
 import Header from './components/Header'
 import { ethers } from 'ethers'
 import { contractAddress , nftAddress, tokenAddress} from '../config'
