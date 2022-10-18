@@ -1,11 +1,11 @@
-import React from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import { useEffect, useState } from 'react'
-import { contractAddress , nftAddress, tokenAddress} from '../config'
+import {useState } from 'react'
+import {tokenAddress} from '../config'
 import EasyNFT from "../../../src/artifacts/contracts/mock/token.sol/EasyNFT.json"
 import { ethers } from 'ethers'
 import { useWeb3 } from './context/Web3Provider'
+
 export default function mint() {
   const wallet = useWeb3()
   const [formInput , setFormInput] = useState()
@@ -20,7 +20,6 @@ export default function mint() {
   async function mint(){
     if(parseInt(formInput)===NaN){
       throw new Error("Wrong input!")
-      alert("Wrong input!")
     }
     const instance = new ethers.Contract(tokenAddress, EasyNFT.abi, wallet.signer)
     const tx = await instance.mint(formInput)

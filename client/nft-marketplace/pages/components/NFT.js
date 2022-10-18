@@ -1,7 +1,6 @@
-import React from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-export default function NFT({image, name, description, price, buy, itemId, created}) {
+export default function NFT({image, name, description, price, buy, itemId}) {
     const router = useRouter()
     const styles={
         card:`h-[35rem] overflow-hidden cursor-pointer card flex flex-col justify-between shadowed bg-main   rounded-md `,

@@ -1,5 +1,4 @@
-import styles from '../styles/Home.module.css'
-import { useRouter } from 'next/router'
+import Alert from '@mui/material/Alert';
 import Header from './components/Header'
 import NFT from './components/NFT'
 import { useState, useEffect} from 'react'
@@ -11,9 +10,10 @@ import Collection1 from "../../../src/artifacts/contracts/mock/NFTs.sol/Collecti
 import EasyNFT from "../../../src/artifacts/contracts/mock/token.sol/EasyNFT.json"
 import Loader from './components/Loader'
 import Footer from './components/Footer'
+
 export default function Market() {
-  const router = useRouter()
   const wallet = useWeb3()
+  const [status , setStatus] = useState()
   const [items,setItems] = useState()
   const [loadingState, setLoadingState] = useState("not-loaded")
   const styles={
@@ -47,10 +47,8 @@ export default function Market() {
               const item = {
                   name:metadata.name,
                   description:metadata.description,
-                  created: metadata.created_by,
                   image : metadata.image,
                   itemId,
-                  seller:i.seller,
                   contractAddress:i.contractAddress,
                   tokenId,
                   price,
@@ -81,6 +79,7 @@ export default function Market() {
       await tx.wait()
       fetchItems()
     }catch(e){
+      setStatus("buy-failed")
       console.log(e)
     }
   }
@@ -88,17 +87,16 @@ export default function Market() {
   return (
     <div className="bg-main "> 
       <Header/>
-      {loadingState!="loaded" ? 
-       <Loader/>
-      : 
-      (
+      {status == "buy-failed" && <Alert severity="warning">Oops! Something went wrong.</Alert>}
+      {loadingState!="loaded"  
+      ? <Loader/>
+      : (
       <div className={styles.mainContainer}>
         <div className={styles.nftContainer}>
           {items.map((item,i)=>
           <NFT 
-          created={item.created}
-          itemId={item.itemId}
           key={i} 
+          itemId={item.itemId}
           buy={()=>{buy(item)}} 
           image={item.image} 
           name={item.name} 

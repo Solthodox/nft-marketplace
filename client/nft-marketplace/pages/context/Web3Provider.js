@@ -8,8 +8,6 @@ export function useWeb3(){
     return useContext(Web3Context)
 }
 
-
-
 export function Web3Provider({children}) {
   const [provider , setProvider] = useState()
   const [signer , setSigner] = useState()
@@ -79,7 +77,7 @@ export function Web3Provider({children}) {
 
     if(!provider && localStorage?.getItem("isWalletConnected",true)==='true') connect()
     
-    provider?.on("accountsChanged" , (accounts)=>{
+    window.ethereum?.on("accountsChanged" , (accounts)=>{
       connect()
     })
 

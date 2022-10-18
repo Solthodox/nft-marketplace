@@ -22,16 +22,17 @@ function Header() {
        {wallet.provider && (
             <div className={styles.sections}>
                 <Link href="/market"><a className='font-semibold mx-4'>Market</a></Link>
-                <Link href="/create"><a className='font-semibold mx-4'>Inventory</a></Link>
-                <Link href="/create"><a className='font-semibold mx-4'>Create</a></Link>
                 <Link href="/mint"><a className='font-semibold mx-4'>Mint</a></Link>
             </div>
         )}
         {
-            !wallet.provider ? <button onClick={wallet.connect} className={styles.button}>Connect</button>
+            !wallet.provider 
+            ? <button onClick={wallet.connect} className={styles.button}>Connect</button>
             : <button 
             onClick={wallet.forget}
-            className={styles.button}>{wallet.address.slice(0,5)}...{wallet.address.slice(20,25)}</button>
+            className={styles.button}>
+                {wallet.address.slice(0,5)}...{wallet.address.slice(20,25)}
+            </button>
         }
         
     </div>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Footer() {
 const styles = {
     container:'w-full bg-main  px-24 md:px-36 lg:px-48 py-16',
