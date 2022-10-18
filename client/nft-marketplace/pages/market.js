@@ -5,9 +5,9 @@ import { useState, useEffect} from 'react'
 import { ethers } from 'ethers'
 import { useWeb3 } from './context/Web3Provider'
 import { contractAddress , nftAddress, tokenAddress} from '../config'
-import Marketplace from "../../../src/artifacts/contracts/Marketplace.sol/Marketplace.json"
-import Collection1 from "../../../src/artifacts/contracts/mock/NFTs.sol/Collection1.json"
-import EasyNFT from "../../../src/artifacts/contracts/mock/token.sol/EasyNFT.json"
+import Marketplace from "../artifacts/contracts/Marketplace.sol/Marketplace.json"
+import Collection1 from "../artifacts/contracts/mock/NFTs.sol/Collection1.json"
+import EasyNFT from "../artifacts/contracts/mock/token.sol/EasyNFT.json"
 import Loader from './components/Loader'
 import Footer from './components/Footer'
 

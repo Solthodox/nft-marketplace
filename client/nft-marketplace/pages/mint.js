@@ -2,7 +2,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import {useState } from 'react'
 import {tokenAddress} from '../config'
-import EasyNFT from "../../../src/artifacts/contracts/mock/token.sol/EasyNFT.json"
+import EasyNFT from "../artifacts/contracts/mock/token.sol/EasyNFT.json"
 import { ethers } from 'ethers'
 import { useWeb3 } from './context/Web3Provider'
 
